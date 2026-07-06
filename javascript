@@ -1,25 +1,113 @@
-function calcularAgua() {
-    const areaInput = document.getElementById('area');
-    const resultadoDiv = document.getElementById('resultado');
-    const area = areaInput.value;
+// 1. Rolagem suave nos links do menu
+const linksMenu = document.querySelectorAll('nav a');
+linksMenu.forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const destino = document.querySelector(this.getAttribute('href'));
+        if (destino) { // Verifica se o elemento existe antes de rolar
+            destino.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
 
-    // Limpa as classes anteriores para não acumular erro/sucesso antigos
-    resultadoDiv.className = "";
-
-    // Valida se o usuário digitou um número válido
-    if (area === '' || area <= 0) {
-        resultadoDiv.classList.add('erro');
-        resultadoDiv.innerHTML = '<strong>⚠️ Por favor, insira um tamanho de área válido (maior que 0)!</strong>';
-        return;
+// 2. Alterar cor do menu ao rolar a página
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+    if (nav) { // Verifica se o menu existe
+        if (window.scrollY > 50) {
+            nav.style.backgroundColor = '#4E342E';
+            nav.style.transition = 'background-color 0.3s ease';
+        } else {
+            nav.style.backgroundColor = 'var(--marrom)';
+        }
     }
 
-    // Cálculo: economia média de 12 litros de água por m²
-    const aguaEconomizada = area * 12;
+    // Mostrar ou esconder botão de voltar ao topo
+    const botaoTopo = document.getElementById('voltarTopo');
+    if (botaoTopo) {
+        if (window.scrollY > 300) {
+            botaoTopo.style.display = 'block';
+        } else {
+            botaoTopo.style.display = 'none';
+        }
+    }
+});
 
-    // Aplica a classe de sucesso e exibe o resultado estruturado
-    resultadoDiv.classList.add('sucesso');
-    resultadoDiv.innerHTML = `
-        <h3>🎉 Simulação Concluída!</h3>
-        <p>Automatizando a irrigação em uma área de <strong>${area} m²</strong>, estima-se uma economia de até <strong>${aguaEconomizada} litros</strong> de água por ciclo de rega em relação aos sistemas tradicionais.</p>
-    `;
-}
+// 3. Efeito de destaque ao passar o mouse
+const destaques = document.querySelectorAll('.destaque, .lista-pontos li');
+destaques.forEach(item => {
+    item.addEventListener('mouseover', () => {
+        item.style.transform = 'scale(1.02)';
+        item.style.boxShadow = '0 3px 10px rgba(0,0,0,0.15)';
+    });
+    item.addEventListener('mouseout', () => {
+        item.style.transform = 'scale(1)';
+        item.style.boxShadow = 'none';
+    });
+});
+
+// 4. Botão de voltar ao topo
+const botaoTopo = document.createElement('button');
+botaoTopo.id = 'voltarTopo';
+botaoTopo.innerHTML = '↑';
+botaoTopo.title = 'Voltar ao topo';
+botaoTopo.style.cssText = `
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--verde-principal);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 999;
+    transition: background-color 0.3s ease;
+`;
+document.body.appendChild(botaoTopo);
+
+botaoTopo.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+botaoTopo.addEventListener('mouseover', () => {
+    botaoTopo.style.backgroundColor = '#246427';
+});
+botaoTopo.addEventListener('mouseout', () => {
+    botaoTopo.style.backgroundColor = 'var(--verde-principal)';
+});
+
+// 5. Animação ao aparecer as seções
+const secoes = document.querySelectorAll('section');
+const observador = new IntersectionObserver((entradas) => {
+    entradas.forEach(entrada => {
+        if (entrada.isIntersecting) {
+            entrada.target.style.opacity = '1';
+            entrada.target.style.transform = 'translateY(0)';
+        }
+    });
+}, { threshold: 0.1 });
+
+secoes.forEach(secao => {
+    secao.style.opacity = '0';
+    secao.style.transform = 'translateY(20px)';
+    secao.style.transition = 'all 0.6s ease';
+    observador.observe(secao);
+});
+
+// 6. Mensagem de boas-vindas
+window.addEventListener('load', () => { // Corrigido: faltava o parêntese
+    setTimeout(() => {
+        alert("🌱 Bem-vindo! Este trabalho apresenta a importância do agronegócio, tecnologia e sustentabilidade para o Brasil — desenvolvido para o Concurso Agrinho.");
+    }, 700);
+});
