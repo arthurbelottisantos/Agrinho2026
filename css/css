@@ -1,0 +1,108 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f9f4;
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+/* Conteúdo Principal */
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    padding-bottom: 80px; /* Evita que o footer cubra o botão ou resultado */
+}
+
+section {
+    background-color: white;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #1b5e20;
+    border-bottom: 2px solid #a5d6a7;
+    padding-bottom: 0.5rem;
+}
+
+/* Formulário e Botões */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+input {
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    padding: 0.7rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #1b5e20;
+}
+
+/* Área de Resultado */
+#resultado {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.resultado-oculto {
+    display: none;
+}
+
+/* Classes de estado estilo (Controladas pelo JS) */
+.sucesso {
+    background-color: #e8f5e9;
+    border-left: 5px solid #2e7d32;
+    color: #1b5e20;
+}
+
+.erro {
+    background-color: #ffebee;
+    border-left: 5px solid #d32f2f;
+    color: #c62828;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9rem;
+}
