@@ -1,120 +1,229 @@
-:root {
-    --verde-principal: #2E7D32;  /* Verde floresta (Natureza/Sustentabilidade) */
-    --verde-claro: #81C784;      /* Verde claro para destaques */
-    --azul-agua: #0288D1;        /* Azul para representar a irrigação/água */
-    --marrom-terra: #4E342E;     /* Marrom escuro para o rodapé/terra */
-    --fundo-site: #F4F7F4;       /* Cinza bem claro com toque esverdeado */
-    --fundo-card: #FFFFFF;       /* Branco para as seções de conteúdo */
-    --texto-escuro: #212121;     /* Cinza quase preto para melhor leitura */
+/* ===========================
+   PALETA DE CORES
+=========================== */
+:root{
+    --verde-principal:#2E7D32;
+    --verde-claro:#81C784;
+    --verde-escuro:#1B5E20;
+    --marrom:#5D4037;
+    --bege:#F5F5DC;
+    --branco:#FFFFFF;
+    --cinza:#F4F4F4;
+    --texto:#333333;
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--fundo-site);
-    color: var(--texto-escuro);
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+/* ===========================
+   CONFIGURAÇÕES GERAIS
+=========================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* Cabeçalho (Header) */
-header {
-    background-color: var(--verde-principal);
-    color: white;
-    text-align: center;
-    padding: 2rem 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+html{
+    scroll-behavior:smooth;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:var(--cinza);
+    color:var(--texto);
+    line-height:1.6;
 }
 
-header p {
-    margin: 0.5rem 0 0 0;
-    font-size: 1.2rem;
-    color: #E8F5E9; /* Verde muito claro para o subtítulo */
+/* ===========================
+   MENU
+=========================== */
+nav{
+    position:sticky;
+    top:0;
+    width:100%;
+    background:var(--verde-principal);
+    padding:15px 0;
+    z-index:1000;
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
 }
 
-/* Conteúdo Principal (Main) */
-main {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-    flex: 1;
+nav ul{
+    display:flex;
+    justify-content:center;
+    list-style:none;
+    gap:30px;
 }
 
-section {
-    background-color: var(--fundo-card);
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    border-left: 5px solid var(--verde-claro); /* Detalhe lateral verde */
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
 }
 
-/* Estilização do Formulário e Botão */
-.formulario {
-    margin-top: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;}
-
-input[type="number"] {
-    padding: 0.8rem;
-    border: 2px solid #DDDDDD;
-    border-radius: 4px;
-    font-size: 1rem;
-    transition: border-color 0.3s;
+nav a:hover{
+    color:#FFD54F;
 }
 
-input[type="number"]:focus {
-    border-color: var(--verde-principal);
-    outline: none;
+/* ===========================
+   CABEÇALHO
+=========================== */
+header{
+    background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+    url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+    color:white;
+    text-align:center;
+    padding:120px 20px;
 }
 
-button {
-    background-color: var(--azul-agua); /* Cor da água no botão de calcular */
-    color: white;
-    border: none;
-    padding: 0.8rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+header h1{
+    font-size:3rem;
+    margin-bottom:20px;
 }
 
-button:hover {
-    background-color: #01579B; /* Azul mais escuro ao passar o mouse */
+header p{
+    font-size:1.2rem;
 }
 
-/* Classes para o resultado do JavaScript */
-#resultado {
-    margin-top: 1rem;
-    padding: 1rem;
-    border-radius: 4px;
-    font-weight: bold;
+/* ===========================
+   SEÇÕES
+=========================== */
+section{
+    max-width:1100px;
+    margin:40px auto;
+    padding:40px;
+    background:white;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
 }
 
-.resultado-visivel {
-    background-color: #E1F5FE; /* Fundo azul claro */
-    color: #01579B;            /* Texto azul escuro */
-    border: 1px solid #B3E5FC;
+section h2{
+    color:var(--verde-escuro);
+    margin-bottom:20px;
+    border-left:6px solid var(--verde-principal);
+    padding-left:12px;
 }
 
-.resultado-oculto {
-    display: none;
+/* ===========================
+   CARDS
+=========================== */
+.destaque{
+    background:var(--bege);
+    padding:20px;
+    border-radius:10px;
+    margin:20px 0;
+    transition:.3s;
 }
 
-/* Rodapé (Footer) */
-footer {
-    background-color: var(--marrom-terra);
-    color: #EFEBE9;
-    text-align: center;
-    padding: 1rem;
-   font-size: 0.9rem;
+.destaque:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 18px rgba(0,0,0,.15);
+}
+
+/* ===========================
+   LISTAS
+=========================== */
+.lista-pontos{
+    padding-left:20px;
+}
+
+.lista-pontos li{
+    margin:10px 0;
+    padding:12px;
+    background:#F8F8F8;
+    border-left:5px solid var(--verde-principal);
+    border-radius:6px;
+    transition:.3s;
+}
+
+.lista-pontos li:hover{
+    background:var(--verde-claro);
+    color:white;
+}
+
+/* ===========================
+   IMAGENS
+=========================== */
+img{
+    max-width:100%;
+    border-radius:10px;
+    margin:20px 0;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+/* ===========================
+   BOTÕES
+=========================== */
+button,
+.btn{
+    background:var(--verde-principal);
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+
+button:hover,
+.btn:hover{
+    background:var(--verde-escuro);
+}
+
+/* ===========================
+   RODAPÉ
+=========================== */
+footer{
+    background:var(--marrom);
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+}
+
+/* ===========================
+   BARRA DE ROLAGEM
+=========================== */
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#ddd;
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--verde-principal);
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:var(--verde-escuro);
+}
+
+/* ===========================
+   RESPONSIVIDADE
+=========================== */
+@media(max-width:768px){
+
+    nav ul{
+        flex-direction:column;
+        align-items:center;
+        gap:15px;
+    }
+
+    header{
+        padding:80px 20px;
+    }
+
+    header h1{
+        font-size:2rem;
+    }
+
+    section{
+        margin:20px;
+        padding:25px;
+    }
+
 }
