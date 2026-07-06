@@ -1,17 +1,31 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f9f4;
-    color: #333;
+:root {
+    --verde-principal: #2E7D32;  /* Verde floresta (Natureza/Sustentabilidade) */
+    --verde-claro: #81C784;      /* Verde claro para destaques */
+    --azul-agua: #0288D1;        /* Azul para representar a irrigação/água */
+    --marrom-terra: #4E342E;     /* Marrom escuro para o rodapé/terra */
+    --fundo-site: #F4F7F4;       /* Cinza bem claro com toque esverdeado */
+    --fundo-card: #FFFFFF;       /* Branco para as seções de conteúdo */
+    --texto-escuro: #212121;     /* Cinza quase preto para melhor leitura */
 }
 
-/* Cabeçalho */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--fundo-site);
+    color: var(--texto-escuro);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Cabeçalho (Header) */
 header {
-    background-color: #2e7d32;
+    background-color: var(--verde-principal);
     color: white;
     text-align: center;
     padding: 2rem 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
@@ -19,90 +33,88 @@ header h1 {
     font-size: 2.5rem;
 }
 
-/* Conteúdo Principal */
+header p {
+    margin: 0.5rem 0 0 0;
+    font-size: 1.2rem;
+    color: #E8F5E9; /* Verde muito claro para o subtítulo */
+}
+
+/* Conteúdo Principal (Main) */
 main {
     max-width: 800px;
     margin: 2rem auto;
     padding: 0 1rem;
-    padding-bottom: 80px; /* Evita que o footer cubra o botão ou resultado */
+    flex: 1;
 }
 
 section {
-    background-color: white;
+    background-color: var(--fundo-card);
     padding: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid var(--verde-claro); /* Detalhe lateral verde */
 }
 
-h2 {
-    color: #1b5e20;
-    border-bottom: 2px solid #a5d6a7;
-    padding-bottom: 0.5rem;
-}
-
-/* Formulário e Botões */
+/* Estilização do Formulário e Botão */
 .formulario {
+    margin-top: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    margin-top: 1rem;
-}
+    gap: 0.5rem;}
 
-input {
-    padding: 0.7rem;
-    border: 1px solid #ccc;
+input[type="number"] {
+    padding: 0.8rem;
+    border: 2px solid #DDDDDD;
     border-radius: 4px;
     font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input[type="number"]:focus {
+    border-color: var(--verde-principal);
+    outline: none;
 }
 
 button {
-    background-color: #2e7d32;
+    background-color: var(--azul-agua); /* Cor da água no botão de calcular */
     color: white;
     border: none;
-    padding: 0.7rem;
+    padding: 0.8rem;
     font-size: 1rem;
+    font-weight: bold;
     border-radius: 4px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #1b5e20;
+    background-color: #01579B; /* Azul mais escuro ao passar o mouse */
 }
 
-/* Área de Resultado */
+/* Classes para o resultado do JavaScript */
 #resultado {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     padding: 1rem;
     border-radius: 4px;
+    font-weight: bold;
+}
+
+.resultado-visivel {
+    background-color: #E1F5FE; /* Fundo azul claro */
+    color: #01579B;            /* Texto azul escuro */
+    border: 1px solid #B3E5FC;
 }
 
 .resultado-oculto {
     display: none;
 }
 
-/* Classes de estado estilo (Controladas pelo JS) */
-.sucesso {
-    background-color: #e8f5e9;
-    border-left: 5px solid #2e7d32;
-    color: #1b5e20;
-}
-
-.erro {
-    background-color: #ffebee;
-    border-left: 5px solid #d32f2f;
-    color: #c62828;
-}
-
-/* Rodapé */
+/* Rodapé (Footer) */
 footer {
+    background-color: var(--marrom-terra);
+    color: #EFEBE9;
     text-align: center;
     padding: 1rem;
-    background-color: #333;
-    color: white;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    font-size: 0.9rem;
+   font-size: 0.9rem;
 }
