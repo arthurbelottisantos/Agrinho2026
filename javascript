@@ -4,7 +4,8 @@ linksMenu.forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
         const destino = document.querySelector(this.getAttribute('href'));
-        if (destino) { // Verifica se o elemento existe antes de rolar
+        // Verifica se o destino existe antes de rolar
+        if (destino) {
             destino.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
@@ -16,7 +17,8 @@ linksMenu.forEach(link => {
 // 2. Alterar cor do menu ao rolar a página
 const nav = document.querySelector('nav');
 window.addEventListener('scroll', () => {
-    if (nav) { // Verifica se o menu existe
+    // Verifica se o menu existe
+    if (nav) {
         if (window.scrollY > 50) {
             nav.style.backgroundColor = '#4E342E';
             nav.style.transition = 'background-color 0.3s ease';
@@ -28,11 +30,7 @@ window.addEventListener('scroll', () => {
     // Mostrar ou esconder botão de voltar ao topo
     const botaoTopo = document.getElementById('voltarTopo');
     if (botaoTopo) {
-        if (window.scrollY > 300) {
-            botaoTopo.style.display = 'block';
-        } else {
-            botaoTopo.style.display = 'none';
-        }
+        botaoTopo.style.display = window.scrollY > 300 ? 'block' : 'none';
     }
 });
 
@@ -89,24 +87,26 @@ botaoTopo.addEventListener('mouseout', () => {
 
 // 5. Animação ao aparecer as seções
 const secoes = document.querySelectorAll('section');
-const observador = new IntersectionObserver((entradas) => {
-    entradas.forEach(entrada => {
-        if (entrada.isIntersecting) {
-            entrada.target.style.opacity = '1';
-            entrada.target.style.transform = 'translateY(0)';
-        }
+if (secoes.length > 0) {
+    const observador = new IntersectionObserver((entradas) => {
+        entradas.forEach(entrada => {
+            if (entrada.isIntersecting) {
+                entrada.target.style.opacity = '1';
+                entrada.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    secoes.forEach(secao => {
+        secao.style.opacity = '0';
+        secao.style.transform = 'translateY(20px)';
+        secao.style.transition = 'all 0.6s ease';
+        observador.observe(secao);
     });
-}, { threshold: 0.1 });
+}
 
-secoes.forEach(secao => {
-    secao.style.opacity = '0';
-    secao.style.transform = 'translateY(20px)';
-    secao.style.transition = 'all 0.6s ease';
-    observador.observe(secao);
-});
-
-// 6. Mensagem de boas-vindas
-window.addEventListener('load', () => { // Corrigido: faltava o parêntese
+// 6. Mensagem de boas-vindas (CORREÇÃO PRINCIPAL DE SINTAXE)
+window.addEventListener('load', () => {
     setTimeout(() => {
         alert("🌱 Bem-vindo! Este trabalho apresenta a importância do agronegócio, tecnologia e sustentabilidade para o Brasil — desenvolvido para o Concurso Agrinho.");
     }, 700);
