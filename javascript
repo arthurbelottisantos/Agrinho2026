@@ -9,9 +9,9 @@ linksMenu.forEach(link => {
             destino.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
-            });
+           });
         }
-    });
+       });
 });
 
 // 2. Alterar cor do menu ao rolar a página
