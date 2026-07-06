@@ -1,18 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-<title>Agrinho2026</title>
-<meta charset="utf-8"/>
-<body>
-    
-</body>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Agrinho 2026 - Agricultura Inteligente</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+<body>
 
+    <header>
+        <h1>Agrinho 2026</h1>
+        <p>Inovação e Sustentabilidade no Campo</p>
+    </header>
 
+    <main>
+        <section class="sobre">
+            <h2>Sobre o Projeto</h2>
+            <p>Nosso projeto busca unir a tecnologia moderna com as práticas agrícolas tradicionais, promovendo o uso eficiente de recursos como a água e a energia para um futuro mais sustentável.</p>
+        </section>
 
+        <section class="ferramenta">
+            <h2>Simulador de Irrigação Inteligente</h2>
+            <p>Descubra a quantidade ideal de água para a sua plantação com base na área cultivada.</p>
+            
+            <div class="formulario">
+                <label for="area">Área do plantio (em metros quadrados):</label>
+                <input type="number" id="area" placeholder="Ex: 150">
+                <button onclick="calcularAgua()">Calcular Consumo</button>
+            </div>
 
+            <div id="resultado" class="resultado-oculto"></div>
+        </section>
+    </main>
 
+    <footer>
+        <p>&copy; 2026 Projeto Agrinho - Desenvolvido para o GitHub</p>
+    </footer>
 
-
-</html>
+    <script src="script.js"></script>
+</body>
+</html
+>
