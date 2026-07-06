@@ -3,41 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Agrinho 2026 - Agricultura Inteligente</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Agronegócio: Sustentabilidade e Futuro | Concurso Agrinho</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --verde-principal: #2E7D32;
+            --verde-claro: #81C784;
+            --amarelo: #FBC02D;
+            --marrom: #5D4037;
+            --branco: #FFFFFF;
+            --cinza-claro: #F5F5F5;
+            --texto: #333333;
+        }
+
+        body {
+            background-color: var(--cinza-claro);
+            color: var(--texto);
+            line-height: 1.6;
+        }
+
+        /* Cabeçalho */
+        header {
+            background: linear-gradient(135deg, var(--verde-principal), var(--verde-claro));
+            color: var(--branco);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Navegação */
+        nav {
+            background-color: var(--marrom);
+            padding: 0.8rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--branco);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--amarelo);
+        }
+
+        /* Conteúdo principal */
+        main {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            background-color: var(--branco);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        section h2 {
+            color: var(--verde-principal);
+            margin-bottom: 1.2rem;
+            border-bottom: 2px solid var(--verde-claro);
+            padding-bottom: 0.5rem;
+        }
+
+        section p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .destaque {
+            background-color: #E8F5E9;
+            padding: 1.2rem;
+            border-left: 5px solid var(--verde-principal);
+            border-radius: 5px;
+            margin: 1.5rem 0;
+        }
+
+        .lista-pontos {
+            margin-left: 1.8rem;
+            margin-top: 1rem;
+        }
+
+        .lista-pontos li {
+            margin-bottom: 0.7rem;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: var(--marrom);
+            color: var(--branco);
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.7rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-
-    <header>
-        <h1>Agrinho 2026</h1>
-        <p>Inovação e Sustentabilidade no Campo</p>
+   <header>
+        <h1>Agronegócio: Sustentabilidade, Tecnologia e Desenvolvimento</h1>
+        <p>Trabalho desenvolvido para o Concurso Agrinho</p>
     </header>
 
+    <nav>
+        <ul>
+            <li><a href="#sobre">Sobre o Agronegócio</a></li>
+            <li><a href="#importancia">Importância</a></li>
+            <li><a href="#tecnologia">Tecnologia</a></li>
+            <li><a href="#sustentabilidade">Sustentabilidade</a></li>
+            <li><a href="#conclusao">Conclusão</a></li>
+        </ul>
+    </nav>
+
     <main>
-        <section class="sobre">
-            <h2>Sobre o Projeto</h2>
-            <p>Nosso projeto busca unir a tecnologia moderna com as práticas agrícolas tradicionais, promovendo o uso eficiente de recursos como a água e a energia para um futuro mais sustentável.</p>
+        <section id="sobre">
+            <h2>O que é o Agronegócio?</h2>
+            <p>O agronegócio é um conjunto de atividades econômicas que envolve desde a produção de insumos, o cultivo e a criação de animais, até o processamento, a distribuição e a comercialização dos produtos agrícolas e pecuários. Ele não se restringe apenas ao campo, mas conecta o meio rural com o urbano, gerando empregos e riqueza em todo o país.</p>
+            <p>No Brasil, o agronegócio é um dos pilares da economia, responsável por grande parte das exportações e por garantir a segurança alimentar da população brasileira e de milhões de pessoas ao redor do mundo.</p>
         </section>
 
-        <section class="ferramenta">
-            <h2>Simulador de Irrigação Inteligente</h2>
-            <p>Descubra a quantidade ideal de água para a sua plantação com base na área cultivada.</p>
-            
-            <div class="formulario">
-                <label for="area">Área do plantio (em metros quadrados):</label>
-                <input type="number" id="area" placeholder="Ex: 150">
-                <button onclick="calcularAgua()">Calcular Consumo</button>
+        <section id="importancia">
+            <h2>Importância para o Brasil</h2>
+            <div class="destaque">
+                <p>✅ <strong>Economia:</strong> Representa cerca de 25% do PIB nacional e é o principal setor exportador do Brasil.</p>
+                <p>✅ <strong>Empregos:</strong> Gera mais de 20 milhões de vagas de trabalho, diretas e indiretas, em todas as regiões.</p>
+                <p>✅ <strong>Alimentação:</strong> Garante alimentos de qualidade e em quantidade suficiente para a população e para outros países.</p>
+                <p>✅ <strong>Desenvolvimento:</strong> Impulsiona o crescimento de cidades e regiões, melhorando a infraestrutura e os serviços.</p>
             </div>
+        </section>
 
-            <div id="resultado" class="resultado-oculto"></div>
+        <section id="tecnologia">
+            <h2>Tecnologia no Campo</h2>
+            <p>Hoje, o agronegócio brasileiro é moderno e tecnológico. O uso de inovações transformou a produção, tornando-a mais eficiente e produtiva:</p>
+            <ul class="lista-pontos">
+                <li><strong>Agricultura de Precisão:</strong> Uso de GPS, sensores e softwares para aplicar corretamente insumos e água, reduzindo desperdícios.</li>
+                <li><strong>Biotecnologia:</strong> Desenvolvimento de cultivares mais resistentes a pragas, secas e doenças.</li>
+                <li><strong>Drones e Satélites:</strong> Monitoramento constante das lavouras, identificando problemas rapidamente.</li>
+                <li><strong>Automação:</strong> Máquinas inteligentes que realizam o plantio, colheita e manejo com alta precisão.</li>
+            </ul>
+        </section>
+
+        <section id="sustentabilidade">
+            <h2>Sustentabilidade: O Caminho para o Futuro</h2>
+            <p>Produzir mais sem prejudicar o meio ambiente é o grande desafio do agronegócio atual. A sustentabilidade une três pilares: econômico, social e ambiental.</p>
+            <p>Práticas sustentáveis já são realidade em muitas propriedades rurais:</p>
+            <ul class="lista-pontos">
+                <li>Uso racional da água e preservação de nascentes;</li>
+                <li>Manutenção de áreas de preservação permanente e reservas legais;</li>
+                <li>Rotação de culturas e adubação orgânica para melhorar o solo;</li>
+                <li>Controle biológico de pragas, reduzindo o uso de agrotóxicos;</li>
+                <li>Energia renovável, como solar e biomassa, nas propriedades.</li>
+            </ul>
+            <p>Assim, é possível produzir com responsabilidade, garantindo que as gerações futuras também tenham condições de se desenvolver no campo.</p>
+        </section>
+
+        <section id="conclusao">
+            <h2>Conclusão</h2>
+            <p>O agronegócio é fundamental para o Brasil e para o mundo. Com tecnologia e respeito ao meio ambiente, ele segue evoluindo, provando que é possível crescer economicamente, gerar empregos e cuidar da natureza ao mesmo tempo.</p>
+            <p>Investir em conhecimento e práticas sustentáveis é o caminho para manter o agronegócio forte e cada vez mais responsável — um setor que alimenta o mundo e preserva o futuro.</p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Projeto Agrinho - Desenvolvido para o GitHub</p>
-    </footer>
-
-    <script src="script.js"></script>
+        <p>Desenvolvido para o Concurso Agrinho | Tema: Agronegócio e Sustentabilidade</p>
+        <p>&copy; 2026 - Todos os direitos reservados</p>
+   </footer>
 </body>
-</html
->
+</html>
