@@ -1,229 +1,59 @@
-/* ===========================
-   PALETA DE CORES
-=========================== */
-:root{
-    --verde-principal:#2E7D32;
-    --verde-claro:#81C784;
-    --verde-escuro:#1B5E20;
-    --marrom:#5D4037;
-    --bege:#F5F5DC;
-    --branco:#FFFFFF;
-    --cinza:#F4F4F4;
-    --texto:#333333;
-}
-
-/* ===========================
-   CONFIGURAÇÕES GERAIS
-=========================== */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:var(--cinza);
-    color:var(--texto);
-    line-height:1.6;
+    font-family: Arial, sans-serif;
+    background-color: #125e5b;
+    margin: 0;
+    padding: 20px;
 }
 
-/* ===========================
-   MENU
-=========================== */
-nav{
-    position:sticky;
-    top:0;
-    width:100%;
-    background:var(--verde-principal);
-    padding:15px 0;
-    z-index:1000;
-    box-shadow:0 3px 10px rgba(0,0,0,.2);
+p{
+    font-size: 16px;
+    color: #010101;
 }
 
-nav ul{
-    display:flex;
-    justify-content:center;
-    list-style:none;
-    gap:30px;
+h1{
+    font-size: 24px;
+    color: #7CFC00;
+    margin-top: 20px;
 }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-    transition:.3s;
+button{
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-nav a:hover{
-    color:#FFD54F;
+
+#btnModoEscuro:hover{
+    background-color: #1b5e20;
 }
 
-/* ===========================
-   CABEÇALHO
-=========================== */
-header{
-    background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
-    url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1600&q=80");
-    background-size:cover;
-    background-position:center;
-    color:white;
-    text-align:center;
-    padding:120px 20px;
+.dark{
+    background-color: #121212;
+    color: white;
 }
 
-header h1{
-    font-size:3rem;
-    margin-bottom:20px;
+.dark .container{
+    background-color: #1e1e1e;
 }
 
-header p{
-    font-size:1.2rem;
+.dark h1,
+.dark h2{
+    color: #7CFC00;
 }
 
-/* ===========================
-   SEÇÕES
-=========================== */
-section{
-    max-width:1100px;
-    margin:40px auto;
-    padding:40px;
-    background:white;
-    border-radius:12px;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
+.dark p,
+.dark label{
+    color: white;
 }
 
-section h2{
-    color:var(--verde-escuro);
-    margin-bottom:20px;
-    border-left:6px solid var(--verde-principal);
-    padding-left:12px;
+.dark button{
+    background-color: #388E3C;
 }
 
-/* ===========================
-   CARDS
-=========================== */
-.destaque{
-    background:var(--bege);
-    padding:20px;
-    border-radius:10px;
-    margin:20px 0;
-    transition:.3s;
-}
-
-.destaque:hover{
-    transform:translateY(-5px);
-    box-shadow:0 8px 18px rgba(0,0,0,.15);
-}
-
-/* ===========================
-   LISTAS
-=========================== */
-.lista-pontos{
-    padding-left:20px;
-}
-
-.lista-pontos li{
-    margin:10px 0;
-    padding:12px;
-    background:#F8F8F8;
-    border-left:5px solid var(--verde-principal);
-    border-radius:6px;
-    transition:.3s;
-}
-
-.lista-pontos li:hover{
-    background:var(--verde-claro);
-    color:white;
-}
-
-/* ===========================
-   IMAGENS
-=========================== */
-img{
-    max-width:100%;
-    border-radius:10px;
-    margin:20px 0;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
-}
-
-/* ===========================
-   BOTÕES
-=========================== */
-button,
-.btn{
-    background:var(--verde-principal);
-    color:white;
-    border:none;
-    padding:12px 25px;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:16px;
-    transition:.3s;
-}
-
-button:hover,
-.btn:hover{
-    background:var(--verde-escuro);
-}
-
-/* ===========================
-   RODAPÉ
-=========================== */
-footer{
-    background:var(--marrom);
-    color:white;
-    text-align:center;
-    padding:25px;
-    margin-top:40px;
-}
-
-/* ===========================
-   BARRA DE ROLAGEM
-=========================== */
-::-webkit-scrollbar{
-    width:10px;
-}
-
-::-webkit-scrollbar-track{
-    background:#ddd;
-}
-
-::-webkit-scrollbar-thumb{
-    background:var(--verde-principal);
-    border-radius:10px;
-}
-
-::-webkit-scrollbar-thumb:hover{
-    background:var(--verde-escuro);
-}
-
-/* ===========================
-   RESPONSIVIDADE
-=========================== */
-@media(max-width:768px){
-
-    nav ul{
-        flex-direction:column;
-        align-items:center;
-        gap:15px;
-    }
-
-    header{
-        padding:80px 20px;
-    }
-
-    header h1{
-        font-size:2rem;
-    }
-
-    section{
-        margin:20px;
-        padding:25px;
-    }
-
+img.img {
+    width: 350px;
+    height: auto;
 }
